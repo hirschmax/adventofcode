@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class SonarServiceShould {
+class TestSonarServiceShould {
 
     private SonarService sonarService;
 
@@ -16,7 +16,7 @@ class SonarServiceShould {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Compute changes in depth for measurements")
     void computeChangesInDepthForMeasurements() {
         String measurements = "1 2 3 4";
         String expectedResult = "+++";
