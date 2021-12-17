@@ -25,4 +25,15 @@ class TestPowerConsumptionServiceShould {
         String expectedResult = "00000";
         assertThat(gammaRate).isEqualTo(expectedResult);
     }
+
+    @Test
+    @DisplayName("Compute Epsilon rate")
+    void computeEpsilonRate() {
+        String diagnosticReport = "00000 11111 00000";
+
+        String gammaRate = powerConsumptionService.computeEpsilonRateFor(diagnosticReport);
+
+        String expectedResult = "11111";
+        assertThat(gammaRate).isEqualTo(expectedResult);
+    }
 }
