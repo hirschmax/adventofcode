@@ -21,18 +21,52 @@ class TestDiagnosticsReportServiceShould {
 
     @Test
     @DisplayName("Compute Gamma rate for diagnostics report")
-    void computeGammaRate() {
-        List<String> diagnosticsReport = List.of(
-                "000",
-                "111",
-                "000"
-        );
+    void computeGammaRate_emptyList() {
+        List<String> diagnosticsReport = List.of();
         int expectedResult = 0;
 
         int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticsReport);
 
         assertThat(gammaRate).isEqualTo(expectedResult);
     }
+
+    @Test
+    @DisplayName("Compute Gamma rate for diagnostics report")
+    void computeGammaRate_five() {
+        List<String> diagnosticsReport = List.of("101");
+        int expectedResult = 5;
+
+        int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticsReport);
+
+        assertThat(gammaRate).isEqualTo(expectedResult);
+    }
+
+    @Test
+    @DisplayName("Compute Gamma rate for diagnostics report")
+    void computeGammaRate_7() {
+        List<String> diagnosticsReport = List.of("111");
+        int expectedResult = 7;
+
+        int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticsReport);
+
+        assertThat(gammaRate).isEqualTo(expectedResult);
+    }
+
+    @Test
+    @DisplayName("Compute Gamma rate for diagnostics report")
+    void computeGammaRate_5() {
+        List<String> diagnosticsReport = List.of(
+                "111",
+                "101",
+                "000"
+        );
+        int expectedResult = Integer.parseInt("101", 2);
+
+        int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticsReport);
+
+        assertThat(gammaRate).isEqualTo(expectedResult);
+    }
+
 
     @Test
     @DisplayName("Compute Epsilon rate")
