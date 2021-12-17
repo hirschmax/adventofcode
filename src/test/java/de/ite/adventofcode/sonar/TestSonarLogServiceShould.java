@@ -23,9 +23,9 @@ class TestSonarLogServiceShould {
     void computeChangesInDepthForMeasurements() {
         List<String> sonarLog = List.of("1", "2", "3", "4");
 
-        int result = sonarLogService.computeNumberOfTimesDepthIncreasesFor(sonarLog);
+        int timesDepthIncreases = sonarLogService.computeNumberOfTimesDepthIncreasesFor(sonarLog);
 
-        assertThat(result).isEqualTo(3);
+        assertThat(timesDepthIncreases).isEqualTo(3);
     }
 
     @Test
@@ -33,8 +33,8 @@ class TestSonarLogServiceShould {
     void finalTestForSonarLogService() {
         List<String> sonarLog = TestInputUtils.readInputForSonarLog();
 
-        int result = sonarLogService.computeNumberOfTimesDepthIncreasesFor(sonarLog);
+        int timesDepthIncreases = sonarLogService.computeNumberOfTimesDepthIncreasesFor(sonarLog);
 
-        assertThat(result).isEqualTo(TestInputUtils.expectedResultForSonarLog());
+        assertThat(timesDepthIncreases).isEqualTo(TestInputUtils.expectedResultForSonarLog());
     }
 }

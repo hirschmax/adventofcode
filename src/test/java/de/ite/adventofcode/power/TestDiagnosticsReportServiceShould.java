@@ -20,12 +20,16 @@ class TestDiagnosticsReportServiceShould {
     }
 
     @Test
-    @DisplayName("Compute Gamma rate")
+    @DisplayName("Compute Gamma rate for diagnostics report")
     void computeGammaRate() {
-        List<String> diagnosticReport = List.of("000", "111", "000");
+        List<String> diagnosticsReport = List.of(
+                "000",
+                "111",
+                "000"
+        );
         int expectedResult = 0;
 
-        int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticReport);
+        int gammaRate = diagnosticsReportService.computeGammaRateFor(diagnosticsReport);
 
         assertThat(gammaRate).isEqualTo(expectedResult);
     }
@@ -33,12 +37,16 @@ class TestDiagnosticsReportServiceShould {
     @Test
     @DisplayName("Compute Epsilon rate")
     void computeEpsilonRate() {
-        List<String> diagnosticReport = List.of("000", "111", "000");
+        List<String> diagnosticsReport = List.of(
+                "000",
+                "111",
+                "000"
+        );
         int expectedResult = 7;
 
-        int gammaRate = diagnosticsReportService.computeEpsilonRateFor(diagnosticReport);
+        int epsilonRate = diagnosticsReportService.computeEpsilonRateFor(diagnosticsReport);
 
-        assertThat(gammaRate).isEqualTo(expectedResult);
+        assertThat(epsilonRate).isEqualTo(expectedResult);
     }
 
     @Test

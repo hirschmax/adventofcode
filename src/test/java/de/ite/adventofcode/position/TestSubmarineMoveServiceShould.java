@@ -20,7 +20,7 @@ class TestSubmarineMoveServiceShould {
     }
 
     @Test
-    @DisplayName("Compute relative position from series of commands")
+    @DisplayName("Compute product of horizontal position and depth after move commands")
     void computeProductOfHorizontalAndVerticalPositionAfterMoves() {
         List<String> commands = List.of("forward 5");
 
