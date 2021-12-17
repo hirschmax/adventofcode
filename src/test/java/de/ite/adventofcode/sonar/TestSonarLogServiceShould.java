@@ -29,6 +29,16 @@ class TestSonarLogServiceShould {
     }
 
     @Test
+    @DisplayName("Compute number of times depth increases")
+    void computeChangesInDepthForMeasurements_emptyList() {
+        List<String> sonarLog = List.of();
+
+        int timesDepthIncreases = sonarLogService.computeNumberOfTimesDepthIncreasesFor(sonarLog);
+
+        assertThat(timesDepthIncreases).isZero();
+    }
+
+    @Test
     @DisplayName("Final test for SonarLogService")
     void finalTestForSonarLogService() {
         List<String> sonarLog = TestInputUtils.readInputForSonarLog();

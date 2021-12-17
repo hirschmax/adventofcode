@@ -7,4 +7,6 @@ public class SonarLogService {
     public int computeNumberOfTimesDepthIncreasesFor(List<String> sonarLog) {
         return -1;
     }
+
+
 }
