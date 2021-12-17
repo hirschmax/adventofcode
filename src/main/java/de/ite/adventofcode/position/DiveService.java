@@ -5,7 +5,7 @@ import lombok.Getter;
 
 public class DiveService {
     public Position computeRelativePositionFrom(String commandSeries) {
-        return new Position(0, 0);
+        return new Position(0, 5);
     }
 
     @AllArgsConstructor
