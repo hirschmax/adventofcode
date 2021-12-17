@@ -18,22 +18,28 @@ class TestPowerConsumptionServiceShould {
     @Test
     @DisplayName("Compute Gamma rate")
     void computeGammaRate() {
-        String diagnosticReport = "00000 11111 00000";
+        String diagnosticReport =
+                "00000\n" +
+                "11111\n" +
+                "00000";
 
-        String gammaRate = powerConsumptionService.computeGammaRateFor(diagnosticReport);
+        int gammaRate = powerConsumptionService.computeGammaRateFor(diagnosticReport);
 
-        String expectedResult = "00000";
+        int expectedResult = 0;
         assertThat(gammaRate).isEqualTo(expectedResult);
     }
 
     @Test
     @DisplayName("Compute Epsilon rate")
     void computeEpsilonRate() {
-        String diagnosticReport = "00000 11111 00000";
+        String diagnosticReport =
+                "00000\n" +
+                "11111\n" +
+                "00000";
 
-        String gammaRate = powerConsumptionService.computeEpsilonRateFor(diagnosticReport);
+        int gammaRate = powerConsumptionService.computeEpsilonRateFor(diagnosticReport);
 
-        String expectedResult = "11111";
+        int expectedResult = 31;
         assertThat(gammaRate).isEqualTo(expectedResult);
     }
 }

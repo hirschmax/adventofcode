@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class TestDiveServiceShould {
+class TestPilotServiceShould {
 
-    private DiveService diveService;
+    private PilotService pilotService;
 
     @BeforeEach
     void setUp() {
-        this.diveService = new DiveService();
+        this.pilotService = new PilotService();
     }
 
     @Test
@@ -20,7 +20,7 @@ class TestDiveServiceShould {
     void computeRelativePositionFromCommandSeries() {
         String commandSeries = "forward 5";
 
-        DiveService.Position position = diveService.computeRelativePositionFrom(commandSeries);
+        PilotService.Position position = pilotService.computeRelativePositionFrom(commandSeries);
 
         assertThat(position.getDepth()).isZero();
         assertThat(position.getHorizontal()).isEqualTo(5);

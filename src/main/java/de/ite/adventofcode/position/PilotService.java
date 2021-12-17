@@ -3,7 +3,7 @@ package de.ite.adventofcode.position;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public class DiveService {
+public class PilotService {
     public Position computeRelativePositionFrom(String commandSeries) {
         return new Position(0, 5);
     }
