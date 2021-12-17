@@ -36,6 +36,14 @@ public class TestInputUtils {
         return 2120749;
     }
 
+    public static int expectedResultForDiagnosticsReportGamma() {
+        return 654;
+    }
+
+    public static int expectedResultForDiagnosticsReportEpsilon() {
+        return 3441;
+    }
+
     public static int expectedResultForDiagnosticsReport() {
         return 2250414;
     }
