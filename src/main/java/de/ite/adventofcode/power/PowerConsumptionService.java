@@ -4,6 +4,6 @@ public class PowerConsumptionService {
 
 
     public String computeGammaRateFor(String diagnosticReport) {
-        return "";
+        return "00000";
     }
 }
