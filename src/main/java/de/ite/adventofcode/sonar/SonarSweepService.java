@@ -1,6 +1,6 @@
 package de.ite.adventofcode.sonar;
 
-public class SonarService {
+public class SonarSweepService {
 
     public String computeChangesInDepthFor(String input) {
         return "+++";

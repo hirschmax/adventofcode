@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class TestSonarServiceShould {
+class TestSonarSweepServiceShould {
 
-    private SonarService sonarService;
+    private SonarSweepService sonarSweepService;
 
     @BeforeEach
     void setUp() {
-        sonarService = new SonarService();
+        sonarSweepService = new SonarSweepService();
     }
 
     @Test
@@ -21,7 +21,7 @@ class TestSonarServiceShould {
         String measurements = "1 2 3 4";
         String expectedResult = "+++";
 
-        String result = sonarService.computeChangesInDepthFor(measurements);
+        String result = sonarSweepService.computeChangesInDepthFor(measurements);
 
         assertThat(result).isEqualTo(expectedResult);
     }
