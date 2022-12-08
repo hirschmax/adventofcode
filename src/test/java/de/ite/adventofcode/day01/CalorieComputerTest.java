@@ -9,7 +9,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class CalorieComputerTest {
 
-   @Test
+    @Test
     void shouldReturn24_000ForCaloriesCarriedByElfWithMostCalories() {
         List<String> input = InputUtils.readInput("day01_calories_testdata.txt");
         CalorieComputer calorieComputer = new CalorieComputer(input);
