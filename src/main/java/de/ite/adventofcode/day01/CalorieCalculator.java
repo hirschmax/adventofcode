@@ -1,5 +1,6 @@
 package de.ite.adventofcode.day01;
 
+import de.ite.adventofcode.Calculator;
 import de.ite.adventofcode.InputUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,19 +9,30 @@ import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
-public class CalorieComputer {
+public class CalorieCalculator extends Calculator {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day01_calories.txt");
-        CalorieComputer calorieComputer = new CalorieComputer(inputLines);
+        CalorieCalculator calorieComputer = new CalorieCalculator(inputLines);
         log.info("Number of calories which the elf carrying the most calories is carrying: {}", calorieComputer.getCaloriesCarriedByElfWithMostCalories());
         log.info("Sum of calories which the three elves carrying the most calories are carrying: {}", calorieComputer.getCaloriesCarriedByThreeElvesWithMostCalories());
     }
 
     private final List<Elf> elves = new ArrayList<>();
 
-    public CalorieComputer(List<String> input) {
+    public CalorieCalculator(List<String> input) {
+        super(input);
         init(input);
+    }
+
+    @Override
+    public int solveFirstTask() {
+        return getCaloriesCarriedByElfWithMostCalories();
+    }
+
+    @Override
+    public int solveSecondTask() {
+        return getCaloriesCarriedByThreeElvesWithMostCalories();
     }
 
     private void init(List<String> input) {
@@ -38,11 +50,11 @@ public class CalorieComputer {
         elves.sort(Comparator.comparing(Elf::getCaloriesCarried).reversed());
     }
 
-    protected int getCaloriesCarriedByElfWithMostCalories() {
+    private int getCaloriesCarriedByElfWithMostCalories() {
         return elves.get(0).getCaloriesCarried();
     }
 
-    protected int getCaloriesCarriedByThreeElvesWithMostCalories() {
+    private int getCaloriesCarriedByThreeElvesWithMostCalories() {
         return elves.subList(0, 3).stream().mapToInt(Elf::getCaloriesCarried).sum();
     }
 }

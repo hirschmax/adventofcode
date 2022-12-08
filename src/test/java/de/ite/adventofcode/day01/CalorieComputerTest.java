@@ -10,18 +10,18 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class CalorieComputerTest {
 
     @Test
-    void shouldReturn24_000ForCaloriesCarriedByElfWithMostCalories() {
+    void shouldSolveFirstTaskWithResult24000() {
         List<String> input = InputUtils.readInput("day01_calories_testdata.txt");
-        CalorieComputer calorieComputer = new CalorieComputer(input);
-        int caloriesCarriedByElfWithMostCalories = calorieComputer.getCaloriesCarriedByElfWithMostCalories();
+        CalorieCalculator calorieComputer = new CalorieCalculator(input);
+        int caloriesCarriedByElfWithMostCalories = calorieComputer.solveFirstTask();
         assertThat(caloriesCarriedByElfWithMostCalories).isEqualTo(24_000);
     }
 
     @Test
-    void shouldReturn45_000ForCaloriesCarriedByThreeElvesWithMostCalories() {
+    void shouldSolveSecondTaskWithResult45000() {
         List<String> input = InputUtils.readInput("day01_calories_testdata.txt");
-        CalorieComputer calorieComputer = new CalorieComputer(input);
-        int caloriesCarriedByElfWithMostCalories = calorieComputer.getCaloriesCarriedByThreeElvesWithMostCalories();
+        CalorieCalculator calorieComputer = new CalorieCalculator(input);
+        int caloriesCarriedByElfWithMostCalories = calorieComputer.solveSecondTask();
         assertThat(caloriesCarriedByElfWithMostCalories).isEqualTo(45_000);
     }
 }

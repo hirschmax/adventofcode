@@ -7,21 +7,21 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class RockPaperScissorsTest {
+class RockPaperScissorsCalculatorTest {
 
     @Test
-    void shouldReturnTotalScoreOf15() {
+    void shouldSolveFirstTaskWithResult15() {
         List<String> input = InputUtils.readInput("day02_encrypted_strategy_guide_testdata.txt");
-        RockPaperScissors rockPaperScissors = new RockPaperScissors(input);
-        int totalScore = rockPaperScissors.calculateForBothHandShapes();
+        RockPaperScissorsCalculator rockPaperScissorsCalculator = new RockPaperScissorsCalculator(input);
+        int totalScore = rockPaperScissorsCalculator.solveFirstTask();
         assertThat(totalScore).isEqualTo(15);
     }
 
     @Test
-    void shouldReturnTotalScoreOf12() {
+    void shouldSolveSecondTaskWithResult12() {
         List<String> input = InputUtils.readInput("day02_encrypted_strategy_guide_testdata.txt");
-        RockPaperScissors rockPaperScissors = new RockPaperScissors(input);
-        int totalScore = rockPaperScissors.calculateForStrategyGuide();
+        RockPaperScissorsCalculator rockPaperScissorsCalculator = new RockPaperScissorsCalculator(input);
+        int totalScore = rockPaperScissorsCalculator.solveSecondTask();
         assertThat(totalScore).isEqualTo(12);
     }
 

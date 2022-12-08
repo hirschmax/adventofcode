@@ -10,18 +10,18 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class RucksackCalculatorTest {
 
     @Test
-    void shouldReturnSumOf157() {
+    void shouldSolveFirstTaskWithResult157() {
         List<String> input = InputUtils.readInput("day03_rucksack_content_testdata.txt");
         RucksackCalculator rucksackCalculator = new RucksackCalculator(input);
-        int sum = rucksackCalculator.getSumOfPrioritiesForItemsThatArePutToBothCompartments();
+        int sum = rucksackCalculator.solveFirstTask();
         assertThat(sum).isEqualTo(157);
     }
 
     @Test
-    void shouldReturnSumOf70() {
+    void shouldSolveSecondTaskWithResult70() {
         List<String> input = InputUtils.readInput("day03_rucksack_content_testdata.txt");
         RucksackCalculator rucksackCalculator = new RucksackCalculator(input);
-        int sum = rucksackCalculator.getSumOfPrioritiesThreeElvesGroups();
+        int sum = rucksackCalculator.solveSecondTask();
         assertThat(sum).isEqualTo(70);
     }
 

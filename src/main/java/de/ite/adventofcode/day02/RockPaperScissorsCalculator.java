@@ -1,5 +1,6 @@
 package de.ite.adventofcode.day02;
 
+import de.ite.adventofcode.Calculator;
 import de.ite.adventofcode.InputUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,23 +8,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class RockPaperScissors {
+public class RockPaperScissorsCalculator extends Calculator {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day02_encrypted_strategy_guide.txt");
-        RockPaperScissors rockPaperScissors = new RockPaperScissors(inputLines);
+        RockPaperScissorsCalculator rockPaperScissorsCalculator = new RockPaperScissorsCalculator(inputLines);
         log.info("What would your total score be if everything goes exactly according to your strategy guide?");
-        log.info("Assuming input includes both hand shapes: {}", rockPaperScissors.calculateForBothHandShapes());
-        log.info("Real Strategy guide: {}", rockPaperScissors.calculateForStrategyGuide());
+        log.info("Assuming input includes both hand shapes: {}", rockPaperScissorsCalculator.calculateForBothHandShapes());
+        log.info("Real Strategy guide: {}", rockPaperScissorsCalculator.calculateForStrategyGuide());
     }
 
-    private final List<String> inputLines;
 
-    public RockPaperScissors(List<String> inputLines) {
-        this.inputLines = inputLines;
+    public RockPaperScissorsCalculator(List<String> inputLines) {
+        super(inputLines);
     }
 
-    public int calculateForBothHandShapes() {
+    @Override
+    public int solveFirstTask() {
+        return calculateForBothHandShapes();
+    }
+
+    @Override
+    public int solveSecondTask() {
+        return calculateForStrategyGuide();
+    }
+
+    private int calculateForBothHandShapes() {
         List<Round> bothHandShapesRounds = new ArrayList<>();
         for (String inputLine : inputLines) {
             String[] split = inputLine.split(" ");
@@ -34,7 +44,7 @@ public class RockPaperScissors {
         return bothHandShapesRounds.stream().map(Round::calculateScore).mapToInt(Integer::intValue).sum();
     }
 
-    public int calculateForStrategyGuide() {
+    private int calculateForStrategyGuide() {
         List<Round> strategyGuideRounds = new ArrayList<>();
         for (String inputLine : inputLines) {
             String[] split = inputLine.split(" ");
