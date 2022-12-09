@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class RockPaperScissorsCalculator extends Calculator {
+public class RockPaperScissorsCalculator extends Calculator<Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day02_encrypted_strategy_guide.txt");
@@ -24,12 +24,12 @@ public class RockPaperScissorsCalculator extends Calculator {
     }
 
     @Override
-    public int solveFirstTask() {
+    public Integer solveFirstTask() {
         return calculateForBothHandShapes();
     }
 
     @Override
-    public int solveSecondTask() {
+    public Integer solveSecondTask() {
         return calculateForStrategyGuide();
     }
 

@@ -2,7 +2,7 @@ package de.ite.adventofcode;
 
 import java.util.List;
 
-public abstract class Calculator {
+public abstract class Calculator<T> {
 
     protected final List<String> inputLines;
 
@@ -10,7 +10,7 @@ public abstract class Calculator {
         this.inputLines = inputLines;
     }
 
-    public abstract int solveFirstTask();
-    public abstract int solveSecondTask();
+    public abstract T solveFirstTask();
+    public abstract T solveSecondTask();
 
 }

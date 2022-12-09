@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
-public class CalorieCalculator extends Calculator {
+public class CalorieCalculator extends Calculator<Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day01_calories.txt");
@@ -26,12 +26,12 @@ public class CalorieCalculator extends Calculator {
     }
 
     @Override
-    public int solveFirstTask() {
+    public Integer solveFirstTask() {
         return getCaloriesCarriedByElfWithMostCalories();
     }
 
     @Override
-    public int solveSecondTask() {
+    public Integer solveSecondTask() {
         return getCaloriesCarriedByThreeElvesWithMostCalories();
     }
 

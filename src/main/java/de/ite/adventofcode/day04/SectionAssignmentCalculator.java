@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class SectionAssignmentCalculator extends Calculator {
+public class SectionAssignmentCalculator extends Calculator<Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day04_section_assignments.txt");
@@ -37,12 +37,12 @@ public class SectionAssignmentCalculator extends Calculator {
     }
 
     @Override
-    public int solveFirstTask() {
+    public Integer solveFirstTask() {
         return (int) sectionsPairs.stream().filter(SectionsPair::isOneSectionsFullyContainedByTheOther).count();
     }
 
     @Override
-    public int solveSecondTask() {
+    public Integer solveSecondTask() {
         return (int) sectionsPairs.stream().filter(SectionsPair::doSectionsOverlap).count();
     }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class RucksackCalculator extends Calculator {
+public class RucksackCalculator extends Calculator<Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day03_rucksack_content.txt");
@@ -24,12 +24,12 @@ public class RucksackCalculator extends Calculator {
     }
 
     @Override
-    public int solveFirstTask() {
+    public Integer solveFirstTask() {
         return getSumOfPrioritiesForItemsThatArePutToBothCompartments();
     }
 
     @Override
-    public int solveSecondTask() {
+    public Integer solveSecondTask() {
         return getSumOfPrioritiesThreeElvesGroups();
     }
 
