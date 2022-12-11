@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
 @Slf4j
-public class SupplyStackCalculator extends Calculator<String> {
+public class SupplyStackCalculator extends Calculator<String, String> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day05_supply_stacks.txt");

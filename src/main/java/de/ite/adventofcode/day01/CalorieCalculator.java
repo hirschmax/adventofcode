@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
-public class CalorieCalculator extends Calculator<Integer> {
+public class CalorieCalculator extends Calculator<Integer, Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day01_calories.txt");

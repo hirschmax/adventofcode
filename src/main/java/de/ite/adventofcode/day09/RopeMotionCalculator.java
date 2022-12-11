@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.stream.IntStream;
 
 @Slf4j
-public class RopeMotionCalculator extends Calculator<Integer> {
+public class RopeMotionCalculator extends Calculator<Integer, Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day09_rope_motions.txt");

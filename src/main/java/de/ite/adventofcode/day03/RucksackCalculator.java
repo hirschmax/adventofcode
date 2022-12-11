@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class RucksackCalculator extends Calculator<Integer> {
+public class RucksackCalculator extends Calculator<Integer, Integer> {
 
     public static void main(String[] args) {
         List<String> inputLines = InputUtils.readInput("day03_rucksack_content.txt");
