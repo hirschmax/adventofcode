@@ -10,15 +10,15 @@ import java.util.List;
 public class HillClimbingPathCalculator extends Calculator<Integer, Integer> {
 
     public static void main(String[] args) {
-        List<String> inputLines = InputUtils.readInput("day12_heightmap.txt");
-        HillClimbingPathCalculator hillClimbingPathCalculator = new HillClimbingPathCalculator(inputLines);
+        String input = InputUtils.readInputAsString("day12_heightmap.txt");
+        HillClimbingPathCalculator hillClimbingPathCalculator = new HillClimbingPathCalculator(input);
         log.info("What is the fewest steps required to move from your current position to the location that should get the best signal?");
         log.info("Task 01: {}", hillClimbingPathCalculator.solveFirstTask());
         log.info("What is the fewest steps required to move starting from any square with elevation a to the location that should get the best signal?");
         log.info("Task 02: {}", hillClimbingPathCalculator.solveSecondTask());
     }
-    public HillClimbingPathCalculator(List<String> inputLines) {
-        super(inputLines);
+    public HillClimbingPathCalculator(String input) {
+        super(input.lines().toList());
     }
 
     @Override

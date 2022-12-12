@@ -1,28 +1,15 @@
 package de.ite.adventofcode.day12;
 
-import de.ite.adventofcode.InputUtils;
-import org.junit.jupiter.api.Test;
+import de.ite.adventofcode.CalculatorTest;
 
-import java.util.List;
+class HillClimbingPathCalculatorTest extends CalculatorTest<Integer, Integer, HillClimbingPathCalculator> {
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
-class HillClimbingPathCalculatorTest {
-
-    @Test
-    void solveFirstTask() {
-        List<String> input = InputUtils.readInput("day12_heightmap_testdata.txt");
-        HillClimbingPathCalculator hillClimbingPathCalculator = new HillClimbingPathCalculator(input);
-        int steps = hillClimbingPathCalculator.solveFirstTask();
-        assertThat(steps).isEqualTo(31);
+    public HillClimbingPathCalculatorTest() {
+        super("day12_heightmap_testdata.txt", 31, 29);
     }
 
-    @Test
-    void solveSecondTask() {
-        List<String> input = InputUtils.readInput("day12_heightmap_testdata.txt");
-        HillClimbingPathCalculator hillClimbingPathCalculator = new HillClimbingPathCalculator(input);
-        int steps = hillClimbingPathCalculator.solveSecondTask();
-        assertThat(steps).isEqualTo(29);
+    @Override
+    public Class<HillClimbingPathCalculator> getTestClassName() {
+        return HillClimbingPathCalculator.class;
     }
-
 }
